@@ -55,6 +55,7 @@ function detectFFmpegPath() {
 
     const commonPaths = process.platform === "win32"
         ? [
+            path.join(__dirname, "ffmpeg-bin", "ffmpeg.exe"),
             "D:\\DevTools\\ffmpeg-8.0.1-essentials_build\\bin\\ffmpeg.exe",
             "C:\\ffmpeg\\bin\\ffmpeg.exe",
             "C:\\Program Files\\ffmpeg\\bin\\ffmpeg.exe",
@@ -62,6 +63,7 @@ function detectFFmpegPath() {
             process.env.FFMPEG_PATH
         ]
         : [
+            path.join(__dirname, "ffmpeg-bin", "ffmpeg"),
             "/usr/local/bin/ffmpeg",
             "/usr/bin/ffmpeg",
             process.env.FFMPEG_PATH
